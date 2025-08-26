@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alliance Jiu-Jitsu Guarulhos - A Maior Equipe de Jiu-Jitsu do Mundo</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        allianceBlack: '#000000',
+                        allianceGold: '#FFD700',
+                        allianceWhite: '#FFFFFF',
+                        allianceNeutral: '#333333'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .hero-video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+        }
+        .hero-overlay { background-color: rgba(0, 0, 0, 0.6); }
+
+        /* Tema escuro base */
+        body.dark { background-color: #000; color: #fff; }
+        body.dark header, body.dark footer, body.dark section { background-color: #111; }
+
+        /* CTAs com cores FIXAS (não mudam com o tema) */
+        .cta-top { background-color: #000000; color: #FFD700; }
+        .cta-top:hover { filter: brightness(1.1); }
+        .cta-hero { background-color: #FFD700; color: #000000; }
+        .cta-hero:hover { filter: brightness(0.95); }
+
+        /* Mobile sticky bar (100%) */
+        @media (max-width: 767px) {
+            header { position: sticky; top: 0; width: 100%; }
+        }
+    </style>
+</head>
+<body class="font-sans antialiased text-gray-800 bg-allianceWhite">
+    <!-- Header -->
+    <header class="sticky top-0 z-50 bg-allianceWhite dark:bg-allianceBlack shadow-md">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="flex items-center">
+                <!-- Logo dinâmico -->
+                <img id="logo" src="https://static.wixstatic.com/media/0da99f_b4419b84c77f49dab61031a4d49b2151~mv2.png" alt="Alliance Jiu-Jitsu Caruaru" class="h-12">
+            </div>
+
+            <!-- Desktop Menu -->
+            <nav class="hidden md:flex space-x-8 items-center font-medium">
+                <a href="#inicio" class="hover:text-allianceGold transition">Alliance</a>
+                <a href="#horarios" class="hover:text-allianceGold transition">Horários</a>
+                <a href="#programas" class="hover:text-allianceGold transition">Programas</a>
+                <a href="#planos" class="hover:text-allianceGold transition">Planos</a>
+                <a href="#blog" class="hover:text-allianceGold transition">Blog</a>
+                <a href="#contato" class="hover:text-allianceGold transition">Contato</a>
+                <a href="#agendar" class="cta-top font-bold py-2 px-4 rounded-lg shadow-lg transition" style="background-color: #333333;">AGENDE SUA AULA GRÁTIS</a>
+            </nav>
+
+            <!-- Theme Toggle (ícone) -->
+            <button id="theme-toggle" class="text-2xl ml-4" aria-label="Alternar tema">
+                <i id="theme-icon" class="fas fa-moon"></i>
+            </button>
+
+            <!-- Mobile Menu Button -->
+            <button class="md:hidden text-2xl ml-4" id="mobile-menu-button" aria-label="Abrir menu">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Menu (sempre escuro) -->
+        <div class="md:hidden hidden bg-allianceBlack text-white py-4 px-4" id="mobile-menu">
+            <a href="#inicio" class="block py-2">Alliance</a>
+            <a href="#horarios" class="block py-2">Horários</a>
+            <a href="#programas" class="block py-2">Programas</a>
+            <a href="#planos" class="block py-2">Planos</a>
+            <a href="#blog" class="block py-2">Blog</a>
+            <a href="#contato" class="block py-2">Contato</a>
+            <a href="#agendar" class="mt-4 block cta-top font-bold py-3 px-6 rounded-lg text-center" style="background-color: #333333;">AGENDE SUA AULA GRÁTIS</a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="inicio" class="relative h-screen flex items-center justify-center overflow-hidden">
+        <div class="hero-overlay absolute inset-0"></div>
+        <video autoplay muted loop class="hero-video">
+            <source src="https://videos.pexels.com/video-files/8611719/8611719-hd_1920_1080_30fps.mp4" type="video/mp4">
+            Seu navegador não suporta vídeo HTML5.
+        </video>
+        <div class="container mx-auto px-4 z-10 text-center text-white">
+            <h1 class="text-4xl md:text-6xl font-extrabold mb-4">
+                A MAIOR EQUIPE DE JIU-JITSU DO MUNDO AGORA EM GUARULHOS
+            </h1>
+            <p class="text-xl md:text-2xl mb-8 max-w-3xl mx-auto">
+                Garanta sua aula experimental gratuita e faça parte da Alliance!
+                <span class="block font-bold mt-2">  Experimente o Jiu-Jitsu que forma campeões. </span>
+            </p>
+            <a href="#agendar" class="inline-block cta-hero font-bold py-4 px-8 rounded-lg text-lg transition transform hover:scale-105 shadow-xl">
+                QUERO FAZER MINHA AULA TESTE
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-allianceBlack text-allianceWhite py-12 text-center">
+        <img id="footer-logo" src="https://static.wixstatic.com/media/0da99f_b4419b84c77f49dab61031a4d49b2151~mv2.png" alt="Alliance Jiu-Jitsu Caruaru" class="h-12 mx-auto mb-4">
+        <p class="text-allianceGold">&copy; 2025 Alliance Jiu-Jitsu Caruaru. Todos os direitos reservados.</p>
+    </footer>
+
+    <!-- Instagram Float Button -->
+    <a href="https://instagram.com" target="_blank" class="fixed bottom-24 right-6 bg-gradient-to-tr from-yellow-500 via-pink-500 to-purple-600 text-white w-14 h-14 rounded-full flex items-center justify-center text-2xl shadow-lg transition transform hover:scale-110 z-50" aria-label="Abrir Instagram">
+        <i class="fab fa-instagram"></i>
+    </a>
+
+    <!-- WhatsApp Float Button -->
+    <a href="https://wa.me/5581999999999" target="_blank" class="fixed bottom-6 right-6 bg-green-500 hover:bg-green-600 text-white w-14 h-14 rounded-full flex items-center justify-center text-2xl shadow-lg transition transform hover:scale-110 z-50" aria-label="Abrir WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+<script>
+    const themeToggle = document.getElementById('theme-toggle');
+    const themeIcon = document.getElementById('theme-icon');
+    const logo = document.getElementById('logo');
+    const footerLogo = document.getElementById('footer-logo');
+    const heroVideo = document.querySelector('.hero-video'); // pega o <video>
+
+    function applyLogoByTheme() {
+        const isDark = document.body.classList.contains('dark');
+        if (isDark) {
+            themeIcon.classList.remove('fa-moon');
+            themeIcon.classList.add('fa-sun');
+            logo.src = 'https://static.wixstatic.com/media/0da99f_b4419b84c77f49dab61031a4d49b2151~mv2.png';
+            footerLogo.src = 'https://static.wixstatic.com/media/0da99f_b4419b84c77f49dab61031a4d49b2151~mv2.png';
+            heroVideo.src = 'https://videos.pexels.com/video-files/8611719/8611719-hd_1920_1080_30fps.mp4';
+        } else {
+            themeIcon.classList.remove('fa-sun');
+            themeIcon.classList.add('fa-moon');
+            logo.src = 'https://i.imgur.com/GrXutAp.png';
+            footerLogo.src = 'https://static.wixstatic.com/media/0da99f_b4419b84c77f49dab61031a4d49b2151~mv2.png';
+            heroVideo.src = 'https://videos.pexels.com/video-files/8611719/8611719-hd_1920_1080_30fps.mp4';
+        }
+
+    }
+
+    // Alternar tema
+    themeToggle.addEventListener('click', () => {
+        document.body.classList.toggle('dark');
+        applyLogoByTheme();
+    });
+
+    // Garantir logo/vídeo corretos no carregamento
+    document.addEventListener('DOMContentLoaded', applyLogoByTheme);
+
+    // Mobile menu toggle
+    const mobileMenuButton = document.getElementById('mobile-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+    mobileMenuButton.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+    });
+</script>
+</body>
+</html>
